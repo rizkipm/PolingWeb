@@ -150,19 +150,19 @@ class Api extends CI_Controller {
 		echo json_encode($data);
 	}
 
-	public function get_menu(){ 
+	public function get_galeri(){ 
 		$data = array();
 	
-		$sql = "SELECT * FROM tb_menu ORDER BY id_menu DESC";
+		$sql = "SELECT * FROM tb_dokumentasi ORDER BY id_dok DESC";
         
 		$q = $this->db->query($sql);
 		if($q->num_rows() > 0){				
 			$data['result'] = 'true';
-			$data['msg'] = 'Data semua menu';
+			$data['msg'] = 'Data semua Galeri';
 			$data['data'] = $q->result();
 		}else{
 			$data['result'] = 'false';
-			$data['msg'] = 'Tidak ada data menu';
+			$data['msg'] = 'Tidak ada data Galeri';
 		}
 		
 		//#pre($this->db->last_query());
